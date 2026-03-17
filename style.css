@@ -1,13 +1,22 @@
-/* Custom Properties */
+/* ============================================================
+   CSC Digital Hub — style.css
+   All styles consolidated here. Do NOT add CSS to HTML files.
+   ============================================================ */
+
+/* ---------- Custom Properties ---------- */
 :root {
     --csc-blue: #003366;
     --digital-orange: #ff9933;
-    --dark-bg: #1a1a1a;
-    --light-gray: #f8f9fa;
+    --dark-bg: #111;
+    --light-gray: #f0f2f5;
     --white: #ffffff;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.1);
+    --radius: 12px;
 }
 
-* {
+/* ---------- Reset ---------- */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,16 +29,11 @@ body {
     line-height: 1.6;
 }
 
-/* Header & Nav */
-.top-bar {
-    background: var(--csc-blue);
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    padding: 8px 0;
-    font-size: 0.85rem;
-}
+.bg-light { background-color: var(--light-gray); }
 
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -42,27 +46,53 @@ body {
     z-index: 1000;
 }
 
-.logo { font-size: 1.6rem; font-weight: 800; letter-spacing: -1px; }
+.logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    cursor: pointer;
+}
 .logo-csc { color: var(--csc-blue); }
 .logo-hub { color: var(--digital-orange); }
 
-.nav-links { list-style: none; display: flex; gap: 25px; }
-.nav-links a { text-decoration: none; color: #444; font-weight: 600; transition: 0.3s; }
-.nav-links a:hover { color: var(--csc-blue); }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--csc-blue); }
 
-/* Hero Section */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--csc-blue);
+}
+
+/* ============================================================
+   HERO — HOME PAGE
+   ============================================================ */
 .hero {
-    height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200') center/cover;
+    min-height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=1200') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 0 20px;
+    padding: 60px 20px;
 }
 
 .badge {
+    display: inline-block;
     background: var(--digital-orange);
     padding: 5px 15px;
     border-radius: 20px;
@@ -70,23 +100,53 @@ body {
     font-weight: bold;
 }
 
-.hero-content h1 { font-size: 3.5rem; margin: 15px 0; line-height: 1.1; }
-.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 15px 0;
+    line-height: 1.1;
+}
 
-.btn-primary, .btn-secondary {
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
     padding: 12px 30px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    background: var(--csc-blue);
+    color: white;
 }
+.btn-primary:hover { background: #004080; }
 
-.btn-primary { background: var(--csc-blue); color: white; }
-.btn-secondary { background: #25D366; color: white; }
+.btn-secondary {
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    background: #25D366;
+    color: white;
+}
+.btn-secondary:hover { background: #1da851; }
 
-/* CSC Services */
+/* ============================================================
+   CSC SERVICES SECTION
+   ============================================================ */
 .services { padding: 80px 8%; }
-.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; color: var(--csc-blue); }
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--csc-blue);
+}
 
 .service-container {
     display: grid;
@@ -97,18 +157,77 @@ body {
 .s-card {
     background: white;
     padding: 40px 20px;
-    border-radius: 12px;
+    border-radius: var(--radius);
     text-align: center;
     border-bottom: 4px solid #eee;
     transition: 0.3s;
 }
+.s-card:hover {
+    border-bottom: 4px solid var(--digital-orange);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
 
-.s-card:hover { border-bottom: 4px solid var(--digital-orange); transform: translateY(-10px); }
-.icon-box { font-size: 2.5rem; color: var(--csc-blue); margin-bottom: 15px; }
+.icon-box {
+    font-size: 2.5rem;
+    color: var(--csc-blue);
+    margin-bottom: 15px;
+}
 
-/* Other Ventures (Sports & Taxi) */
+/* More Services Button */
+.more-services-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-more {
+    padding: 12px 35px;
+    background: transparent;
+    color: var(--csc-blue);
+    border: 2px solid var(--csc-blue);
+    font-weight: 700;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn-more i { margin-left: 8px; font-size: 0.9rem; }
+.btn-more:hover {
+    background: var(--csc-blue);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.btn-link-text {
+    margin-left: 15px;
+    color: var(--csc-blue);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn-link-text:hover { color: var(--digital-orange); }
+
+.hidden  { display: none !important; }
+.show-cards {
+    display: block !important;
+    animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   OTHER VENTURES (Sports & Taxi cards on homepage)
+   ============================================================ */
 .other-ventures { padding: 60px 8% 100px; background: #fff; }
-.venture-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.venture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
 
 .venture-card {
     height: 350px;
@@ -120,66 +239,37 @@ body {
     position: relative;
     overflow: hidden;
     color: white;
+    transition: transform 0.3s;
+}
+.venture-card:hover { transform: scale(1.02); }
+
+.venture-card.sports {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent),
+                url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800') center/cover;
+}
+.venture-card.taxi {
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent),
+                url('https://financialexpresswpcontent.s3.amazonaws.com/uploads/2019/07/Mahindra-Bolero-Power-660.jpg') center/cover;
 }
 
-.venture-card.sports { background: linear-gradient(to top, rgba(0,0,0,0.9), transparent), url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=800') center/cover; }
-.venture-card.taxi { background: linear-gradient(to top, rgba(0,0,0,0.9), transparent), url('https://financialexpresswpcontent.s3.amazonaws.com/uploads/2019/07/Mahindra-Bolero-Power-660.jpg') center/cover; }
-
-.v-content i { font-size: 2rem; color: var(--digital-orange); margin-bottom: 10px; }
-.v-btn { margin-top: 15px; display: inline-block; font-weight: bold; border: 1px solid white; padding: 5px 15px; border-radius: 5px; }
-
-footer { background: var(--dark-bg); color: #888; text-align: center; padding: 40px; }
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero-content h1 { font-size: 2.2rem; }
+.v-content i {
+    font-size: 2rem;
+    color: var(--digital-orange);
+    margin-bottom: 10px;
+    display: block;
 }
-/* More Services Button Styling */
-.more-services-wrapper {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.btn-more {
-    padding: 12px 35px;
-    background: transparent;
-    color: var(--csc-blue);
-    border: 2px solid var(--csc-blue);
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 30px;
-    transition: all 0.3s ease;
+.v-btn {
+    margin-top: 15px;
     display: inline-block;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 5px;
 }
 
-.btn-more i {
-    margin-left: 8px;
-    font-size: 0.9rem;
-}
-
-.btn-more:hover {
-    background: var(--csc-blue);
-    color: var(--white);
-    transform: scale(1.05);
-}
-/* Ensure these are in your style.css */
-.hidden {
-    display: none !important; /* Forces it to hide */
-}
-
-.show-cards {
-    display: block !important; /* Forces it to show */
-    animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/* Detailed Page Styles */
-.bg-light { background-color: #f0f2f5; }
-
+/* ============================================================
+   PAGE HEADER (all-services, etc.)
+   ============================================================ */
 .page-header {
     background: var(--csc-blue);
     color: white;
@@ -187,103 +277,18 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     padding: 60px 20px;
     margin-bottom: 40px;
 }
+.page-header h1 { font-size: 2.4rem; }
+.page-header p   { opacity: 0.85; margin-top: 8px; }
 
+/* ============================================================
+   CONTAINER & SECTION TITLES
+   ============================================================ */
 .container-full {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 80px;
 }
 
-.service-category {
-    margin-bottom: 50px;
-}
-
-.cat-title {
-    color: var(--csc-blue);
-    border-bottom: 3px solid var(--digital-orange);
-    display: inline-block;
-    margin-bottom: 25px;
-    padding-bottom: 5px;
-    font-size: 1.8rem;
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.d-card {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: 0.3s;
-    border: 1px solid #eef0f2;
-}
-
-.d-card:hover {
-    border-color: var(--digital-orange);
-    transform: scale(1.02);
-}
-
-.d-card i {
-    font-size: 2rem;
-    color: var(--digital-orange);
-    margin-bottom: 10px;
-}
-
-.contact-cta {
-    background: white;
-    text-align: center;
-    padding: 50px;
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
-}
-.hidden { display: none !important; }.contact-cta {
-    background: #fff;
-    text-align: center;
-    padding: 60px 20px; /* Increased padding for better spacing */
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-}
-
-.contact-cta h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var(--csc-blue);
-}
-
-.contact-cta p {
-    margin-bottom: 25px;
-    color: #666;
-}
-
-/* Specific fix for the button alignment */
-.cta-button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn-primary-call {
-    display: inline-block; /* Essential for correct padding/width */
-    background: var(--csc-blue);
-    color: white;
-    padding: 15px 40px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 51, 102, 0.2);
-    transition: transform 0.2s;
-}
-
-.btn-primary-call:hover {
-    transform: translateY(-3px);
-    background: #004080;
-}
-/* Sports Page specific layout */
 .section-title-sports {
     margin: 40px 0 20px;
     font-size: 1.8rem;
@@ -292,64 +297,142 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     padding-left: 15px;
 }
 
-/* FIX FOR PICTURES: Ensures all images are same size */
+/* ============================================================
+   DETAIL / SERVICE GRIDS
+   ============================================================ */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Fleet grid (taxi page) - 2 equal columns */
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.d-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #eef0f2;
+    flex: 1 1 300px;
+    max-width: 380px;
+}
+.d-card:hover {
+    border-color: var(--digital-orange);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+.d-card i {
+    font-size: 2rem;
+    color: var(--digital-orange);
+    margin-bottom: 10px;
+}
+
+/* Card Header (all-services checklist cards) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.card-header i {
+    font-size: 1.5rem;
+    color: var(--digital-orange);
+}
+.card-header h3 { font-size: 1.05rem; color: #222; }
+
+.sub-text {
+    font-size: 0.8rem;
+    color: #888;
+    margin: -10px 0 10px;
+}
+
+/* Checklist */
+.check-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+.check-list li {
+    font-size: 0.88rem;
+    color: #555;
+    margin-bottom: 7px;
+    padding-left: 4px;
+}
+.check-list li i {
+    color: var(--digital-orange);
+    margin-right: 7px;
+    font-size: 0.85rem;
+}
+
+/* Checklist card */
+.checklist-card {
+    text-align: left;
+}
+
+/* ============================================================
+   IMAGE WRAPPER (consistent image sizing)
+   ============================================================ */
 .img-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 9; /* Sets a standard landscape ratio */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 15px;
 }
-
 .img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This prevents the "stretched" look */
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
+.d-card:hover img { transform: scale(1.08); }
 
-.d-card:hover img {
-    transform: scale(1.1);
-}
-
-/* Hero for Sports */
+/* ============================================================
+   SPORTS PAGE HERO
+   ============================================================ */
 .sports-hero {
     height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
                 url('https://images.unsplash.com/photo-1471295253337-3ceaaedca402?q=80&w=1200') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
+    padding: 0 20px;
 }
+.sports-hero h1 { font-size: 2.8rem; }
 
-/* Contact Buttons Fix */
-.cta-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.btn-call { background: #d9534f; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-.btn-wa { background: #25d366; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-/* Taxi Hero */
+/* ============================================================
+   TAXI PAGE
+   ============================================================ */
 .taxi-hero {
     height: 45vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
+    padding: 0 20px;
 }
 
-/* Taxi Badges */
-.taxi-card {
-    position: relative;
-    text-align: left !important;
-}
+.taxi-card { position: relative; text-align: left !important; }
 
 .taxi-badge {
     position: absolute;
@@ -361,23 +444,19 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     font-weight: bold;
     color: white;
 }
-
-.all-india { background: #28a745; }
+.all-india   { background: #28a745; }
 .state-permit { background: #007bff; }
 
-/* Feature List */
 .taxi-features {
     list-style: none;
     margin-top: 15px;
     padding: 0;
 }
-
 .taxi-features li {
     font-size: 0.9rem;
     margin-bottom: 5px;
     color: #555;
 }
-
 .taxi-features i {
     color: #28a745;
     margin-right: 8px;
@@ -388,20 +467,272 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     color: var(--digital-orange);
     margin-bottom: 15px;
 }
-/* Footer Design & Developer Credit */
+
+/* ============================================================
+   LIC PAGE
+   ============================================================ */
+.lic-hero {
+    height: 45vh;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+.lic-hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+.lic-hero p  { font-size: 1.1rem; opacity: 0.9; }
+
+.lic-intro {
+    background: #fff3e0;
+    border-left: 5px solid var(--digital-orange);
+    padding: 18px 25px;
+    margin: 30px 0 10px;
+    border-radius: 6px;
+    font-size: 0.97rem;
+    color: #444;
+}
+.lic-intro .icon-accent {
+    color: var(--digital-orange);
+    margin-right: 8px;
+}
+
+/* Free consultation button */
+.btn-free-consult {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--csc-blue);
+    color: #fff;
+    padding: 9px 22px;
+    border-radius: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+.btn-free-consult:hover { background: var(--digital-orange); }
+.btn-free-consult i { margin-right: 7px; }
+
+/* LIC scheme grid */
+.lic-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Scheme cards */
+.scheme-card {
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--csc-blue);
+    transition: 0.3s;
+    position: relative;
+}
+.scheme-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--digital-orange);
+    box-shadow: var(--shadow-md);
+}
+.scheme-card .plan-no {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: #f0f4ff;
+    color: var(--csc-blue);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.scheme-card .card-icon {
+    font-size: 2rem;
+    color: var(--digital-orange);
+    margin-bottom: 10px;
+}
+.scheme-card h3 {
+    font-size: 1.05rem;
+    color: var(--csc-blue);
+    margin-bottom: 6px;
+    padding-right: 80px;
+}
+.scheme-card p {
+    font-size: 0.88rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* Tags */
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+.tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.tag-blue   { background: #e8f0fe; color: #003366; }
+.tag-green  { background: #e6f9ed; color: #1a7a3e; }
+.tag-orange { background: #fff3e0; color: #c65000; }
+.tag-red    { background: #fde8e8; color: #c0392b; }
+
+/* Eligibility box */
+.eligibility-box {
+    background: #f8f9ff;
+    border: 1px solid #d5deff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: #555;
+}
+.eligibility-box span {
+    font-weight: 700;
+    color: var(--csc-blue);
+}
+
+/* Docs box */
+.docs-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+}
+.docs-box h4 {
+    color: var(--csc-blue);
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+.docs-box h4 i {
+    color: var(--digital-orange);
+    margin-right: 8px;
+}
+
+/* LIC CTA */
+.lic-cta {
+    background: linear-gradient(135deg, #003366, #0055a5);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 50px;
+    border-radius: var(--radius);
+}
+.lic-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.lic-cta h2 i { margin-right: 10px; }
+.lic-cta p {
+    opacity: 0.85;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+.lic-cta .cta-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   CTA SECTIONS (shared across pages)
+   ============================================================ */
+.contact-cta {
+    background: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+.contact-cta h2, .contact-cta h3 {
+    font-size: 1.8rem;
+    color: var(--csc-blue);
+    margin-bottom: 10px;
+}
+.contact-cta p {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+.cta-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.btn-call {
+    background: #d9534f;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-call:hover { background: #c0392b; }
+
+.btn-wa {
+    background: #25d366;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-wa:hover { background: #1da851; }
+
+/* LIC-specific call/wa override (orange call) */
+.lic-cta .btn-call { background: var(--digital-orange); }
+.lic-cta .btn-call:hover { background: #e08800; }
+
+/* all-services Call Now button */
+.cta-button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.btn-primary-call {
+    display: inline-block;
+    background: var(--csc-blue);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,51,102,0.2);
+    transition: 0.2s;
+}
+.btn-primary-call:hover {
+    transform: translateY(-3px);
+    background: #004080;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .main-footer {
-    background: #111; /* Deep Dark Background like Miklam Homes */
+    background: var(--dark-bg);
     color: #fff;
     padding: 60px 0 30px;
     text-align: center;
 }
-
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
-
 .footer-section h3 {
     font-size: 1.8rem;
     margin-bottom: 25px;
@@ -409,14 +740,12 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     letter-spacing: 1px;
 }
 
-/* Contact Icons */
 .footer-icons {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 20px;
 }
-
 .footer-icon-link {
     width: 60px;
     height: 60px;
@@ -431,16 +760,14 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.1);
 }
-
 .footer-icon-link:hover {
-    background: var(--digital-orange); /* Uses your accent color */
+    background: var(--digital-orange);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.4);
+    box-shadow: 0 5px 15px rgba(255,153,51,0.4);
 }
-
 .whatsapp-bg:hover {
     background: #25d366 !important;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 5px 15px rgba(37,211,102,0.4);
 }
 
 .business-email {
@@ -448,27 +775,21 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     font-size: 1rem;
     margin-top: 10px;
 }
-
-/* Divider */
 .footer-divider {
     border: 0;
     border-top: 1px solid #222;
     margin: 40px 0;
 }
-
-/* Developer Credit Styling */
 .footer-bottom p {
     font-size: 0.9rem;
     color: #555;
     margin-bottom: 20px;
 }
-
 .developer-credit {
     font-size: 0.85rem;
     color: #888;
     line-height: 1.6;
 }
-
 .dev-name {
     color: var(--digital-orange);
     font-weight: 700;
@@ -476,7 +797,6 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .dev-contact a {
     color: #fff;
     text-decoration: none;
@@ -484,112 +804,142 @@ footer { background: var(--dark-bg); color: #888; text-align: center; padding: 4
     opacity: 0.7;
     transition: 0.3s;
 }
-
 .dev-contact a:hover {
     opacity: 1;
     color: var(--digital-orange);
-}/* Card Layout Improvements */
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
 }
 
-.card-header i {
-    font-size: 1.5rem;
-    color: #ff9933;
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+
+/* --- Tablets (≤ 1024px) --- */
+@media (max-width: 1024px) {
+    .navbar { padding: 15px 5%; }
+    .services, .other-ventures { padding: 60px 5%; }
+    .container-full { padding: 0 15px 60px; }
+
+    .hero-content h1 { font-size: 2.8rem; }
+    .sports-hero h1, .lic-hero h1 { font-size: 2.2rem; }
+
+    .venture-card { height: 280px; padding: 25px; }
+
+    .details-grid { gap: 18px; }
+    .d-card { flex: 1 1 260px; }
+
+    .lic-details-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 }
 
-.sub-text {
-    font-size: 0.8rem;
-    color: #888;
-    margin: -10px 0 10px 0;
+/* --- Mobile (≤ 768px) --- */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .nav-links { display: none; flex-direction: column; gap: 0; }
+    .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        padding: 10px 0 20px;
+        z-index: 999;
+    }
+    .nav-links.open li { border-bottom: 1px solid #f0f0f0; }
+    .nav-links.open a { display: block; padding: 12px 25px; font-size: 1rem; }
+    .mobile-menu-icon { display: block; }
+
+    /* Hero */
+    .hero { min-height: 60vh; padding: 60px 20px; }
+    .hero-content h1 { font-size: 2rem; }
+    .hero-content p { font-size: 0.95rem; }
+    .badge { font-size: 0.8rem; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 220px; text-align: center; }
+
+    /* Page heroes */
+    .sports-hero, .taxi-hero, .lic-hero { height: 35vh; }
+    .sports-hero h1, .taxi-hero h1, .lic-hero h1 { font-size: 1.8rem; }
+    .page-header h1 { font-size: 1.7rem; }
+
+    /* Section titles */
+    .section-title { font-size: 1.7rem; }
+    .section-title-sports { font-size: 1.4rem; }
+
+    /* Service cards */
+    .service-container { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .s-card { padding: 25px 15px; }
+    .icon-box { font-size: 2rem; }
+
+    /* Venture cards */
+    .venture-grid { grid-template-columns: 1fr; }
+    .venture-card { height: 220px; padding: 20px; }
+
+    /* Detail cards */
+    .details-grid { flex-direction: column; align-items: stretch; gap: 15px; }
+    .d-card { flex: unset; max-width: 100%; width: 100%; }
+
+    /* Fleet grid */
+    .fleet-grid { grid-template-columns: 1fr; }
+
+    /* LIC grids */
+    .lic-details-grid { grid-template-columns: 1fr; gap: 15px; }
+
+    /* Scheme card heading padding fix */
+    .scheme-card h3 { padding-right: 60px; font-size: 1rem; }
+
+    /* Tags wrapping */
+    .tag-row { gap: 5px; }
+    .tag { font-size: 0.68rem; }
+
+    /* CTA buttons */
+    .cta-btns { flex-direction: column; align-items: center; }
+    .btn-call, .btn-wa { width: 220px; text-align: center; }
+    .lic-cta .cta-btns { flex-direction: column; align-items: center; }
+
+    /* LIC intro */
+    .lic-intro { font-size: 0.9rem; padding: 15px 18px; }
+    .btn-free-consult { width: 100%; text-align: center; margin-top: 14px; }
+
+    /* LIC CTA */
+    .lic-cta { padding: 40px 20px; }
+    .lic-cta h2 { font-size: 1.5rem; }
+
+    /* Contact CTA */
+    .contact-cta { padding: 40px 20px; }
+    .contact-cta h2, .contact-cta h3 { font-size: 1.4rem; }
+
+    /* Footer */
+    .footer-section h3 { font-size: 1.3rem; }
+    .footer-icon-link { width: 50px; height: 50px; font-size: 1.2rem; }
+    .footer-icons { gap: 15px; }
+
+    /* All-services docs box */
+    .docs-box { padding: 18px; }
+
+    /* More btn */
+    .btn-more { font-size: 0.9rem; padding: 10px 25px; }
 }
 
-/* FIXING THE CTA SECTION OVERLAP */
-.contact-cta-fixed {
-    background: #fff;
-    text-align: center;
-    padding: 50px 20px;
-    margin-top: 60px;
-    border-top: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* --- Small Mobile (≤ 480px) --- */
+@media (max-width: 480px) {
+    .navbar { padding: 12px 4%; }
+    .logo { font-size: 1.3rem; }
 
-.contact-cta-fixed h3 {
-    margin-bottom: 10px;
-}
+    .hero-content h1 { font-size: 1.6rem; }
+    .sports-hero h1, .taxi-hero h1, .lic-hero h1 { font-size: 1.5rem; }
 
-.contact-cta-fixed p {
-    margin-bottom: 30px; /* Adds space before the button */
-    color: #555;
-}
+    .service-container { grid-template-columns: 1fr; }
 
-.btn-call-fixed {
-    background: #003366;
-    color: white;
-    padding: 15px 40px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    display: block; /* Prevents text wrap issues */
-    width: fit-content;
-}/* Fix for the bottom margin issue */
-.container-full {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 80px 20px; /* Added 80px to the bottom padding */
-}
+    .section-title { font-size: 1.4rem; }
+    .section-title-sports { font-size: 1.2rem; }
 
-/* Ensure the last category has space */
-.service-category:last-of-type {
-    margin-bottom: 100px; /* Extra space after the very last document grid */
-}
+    .scheme-card { padding: 18px 15px; }
+    .scheme-card .plan-no { font-size: 0.65rem; padding: 2px 8px; }
 
-/* Fix for the CTA (Call Now) section spacing */
-.contact-cta-fixed {
-    clear: both;
-    margin-top: 50px;
-    padding: 60px 20px;
-    background: #f9f9f9;
-    border-top: 1px solid #eee;
-}/* Fix for the bottom margin issue */
-.container-full {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 80px 20px; /* Added 80px to the bottom padding */
-}
+    .lic-cta h2 { font-size: 1.3rem; }
 
-/* Ensure the last category has space */
-.service-category:last-of-type {
-    margin-bottom: 100px; /* Extra space after the very last document grid */
-}
-
-/* Fix for the CTA (Call Now) section spacing */
-.contact-cta-fixed {
-    clear: both;
-    margin-top: 50px;
-    padding: 60px 20px;
-    background: #f9f9f9;
-    border-top: 1px solid #eee;
-}.details-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* This centers the last line */
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.checklist-card {
-    flex: 1 1 300px; /* This allows cards to grow but keeps them around 300px */
-    max-width: 380px; /* Prevents a single card from becoming too wide */
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    .footer-section h3 { font-size: 1.1rem; }
+    .dev-name { font-size: 1rem; }
 }
