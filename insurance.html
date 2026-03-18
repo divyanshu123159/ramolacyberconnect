@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Plans – Tata AIG & Budget Plans | CSC Digital Hub Jakhnidhar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
+    <script src="main.js" defer></script>
+
+    <meta name="description" content="Compare Premium Tata AIG Insurance and Budget InsuranceDekho plans at CSC Digital Hub Jakhnidhar – Health, Car, Bike, Travel, Home & Personal Accident Insurance in Uttarakhand. Free consultation – Call +919034143872.">
+    <meta name="keywords" content="insurance Jakhnidhar, Tata AIG insurance Uttarakhand, health insurance Tehri Garhwal, car insurance Jakhnidhar, bike insurance Uttarakhand, travel insurance, InsuranceDekho plans, Star Health insurance, HDFC Ergo, Niva Bupa, budget insurance Uttarakhand, personal accident insurance, home insurance Uttarakhand">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ramolacyberconnect.in/insurance.html">
+
+    <style>
+        /* ── Insurance Hero ── */
+        .ins-hero {
+            min-height: 42vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200') center/cover;
+            display: flex; align-items: center; justify-content: center;
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .ins-hero h1 { font-size: 2.8rem; margin: 12px 0 8px; }
+        .ins-hero p  { font-size: 1.05rem; opacity: .88; }
+
+        /* ── Segment Banner ── */
+        .segment-banner {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 25px;
+            border-radius: 10px;
+            margin: 40px 0 22px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .segment-banner.premium {
+            background: linear-gradient(135deg, #003366 0%, #0055a5 100%);
+            color: #fff;
+        }
+        .segment-banner.budget {
+            background: linear-gradient(135deg, #1a7a3e 0%, #25a85c 100%);
+            color: #fff;
+        }
+        .segment-banner i { font-size: 1.8rem; }
+        .segment-banner .seg-label { font-size: 0.75rem; opacity: .8; display: block; font-weight: 400; margin-top: 2px; }
+
+        /* ── Insurance Cards ── */
+        .ins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .ins-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+            border-top: 4px solid #003366;
+            transition: 0.3s;
+            position: relative;
+        }
+        .ins-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+            border-top-color: #ff9933;
+        }
+        .ins-card.budget-card { border-top-color: #1a7a3e; }
+        .ins-card.budget-card:hover { border-top-color: #ff9933; }
+
+        .ins-card .ins-badge {
+            position: absolute;
+            top: 12px; right: 12px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+        .badge-premium { background: #e8f0fe; color: #003366; }
+        .badge-budget  { background: #e6f9ed; color: #1a7a3e; }
+        .badge-govt    { background: #fff3e0; color: #c65000; }
+
+        .ins-card .ins-icon {
+            font-size: 2rem;
+            color: #ff9933;
+            margin-bottom: 10px;
+        }
+        .ins-card h3 {
+            font-size: 1.05rem;
+            color: #003366;
+            margin-bottom: 6px;
+            padding-right: 75px;
+        }
+        .ins-card .provider {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ins-card p {
+            font-size: 0.86rem;
+            color: #666;
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        /* ── Feature Tags ── */
+        .ins-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
+        .ins-tag {
+            font-size: 0.7rem;
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .t-blue   { background: #e8f0fe; color: #003366; }
+        .t-green  { background: #e6f9ed; color: #1a7a3e; }
+        .t-orange { background: #fff3e0; color: #c65000; }
+        .t-red    { background: #fde8e8; color: #c0392b; }
+
+        /* ── Premium band ── */
+        .premium-band {
+            font-size: 0.82rem;
+            background: #f8f9ff;
+            border: 1px solid #d5deff;
+            border-radius: 7px;
+            padding: 8px 12px;
+            margin-top: 10px;
+            color: #555;
+        }
+        .premium-band strong { color: #003366; }
+
+        /* ── Compare toggle tabs ── */
+        .seg-tabs {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0 10px;
+            flex-wrap: wrap;
+        }
+        .seg-tab {
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.3s;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .seg-tab.premium-tab { color: #003366; border-color: #003366; }
+        .seg-tab.premium-tab.active, .seg-tab.premium-tab:hover { background: #003366; color: #fff; }
+        .seg-tab.budget-tab  { color: #1a7a3e; border-color: #1a7a3e; }
+        .seg-tab.budget-tab.active, .seg-tab.budget-tab:hover  { background: #1a7a3e; color: #fff; }
+
+        /* ── Comparison table ── */
+        .compare-box {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        .compare-box table { width: 100%; border-collapse: collapse; }
+        .compare-box th {
+            background: #003366;
+            color: #fff;
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.88rem;
+        }
+        .compare-box th.green-th { background: #1a7a3e; }
+        .compare-box td {
+            padding: 12px 18px;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            vertical-align: top;
+        }
+        .compare-box tr:last-child td { border-bottom: none; }
+        .compare-box tr:nth-child(even) td { background: #fafafa; }
+        .compare-box td:first-child { font-weight: 600; color: #333; width: 30%; }
+
+        /* ── CTA ── */
+        .ins-cta {
+            background: linear-gradient(135deg, #003366, #0055a5);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+            margin-top: 50px;
+            border-radius: 12px;
+        }
+        .ins-cta h2 { font-size: 1.9rem; margin-bottom: 10px; }
+        .ins-cta p  { opacity: .85; margin-bottom: 25px; }
+
+        @media (max-width: 768px) {
+            .ins-hero h1 { font-size: 1.8rem; }
+            .ins-grid { grid-template-columns: 1fr; }
+            .compare-box { overflow-x: auto; }
+            .compare-box table { min-width: 550px; }
+            .segment-banner { flex-direction: column; align-items: flex-start; gap: 8px; }
+        }
+        @media (max-width: 480px) {
+            .ins-hero h1 { font-size: 1.5rem; }
+            .ins-card h3 { padding-right: 0; }
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header>
+        <nav class="navbar">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">
+                <span class="logo-csc">CSC</span><span class="logo-hub">HUB</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="all-services.html">CSC Services</a></li>
+                <li><a href="sports.html">Sports Shop</a></li>
+                <li><a href="taxi.html">Taxi</a></li>
+                <li><a href="lic.html">LIC Schemes</a></li>
+                <li><a href="insurance.html" class="active">Insurance</a></li>
+            </ul>
+            <div class="mobile-menu-icon"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="ins-hero">
+        <div class="hero-content">
+            <span class="badge">Authorised Insurance Agent</span>
+            <h1>Insurance Plans for Every Need</h1>
+            <p>Premium Tata AIG plans &nbsp;|&nbsp; Budget InsuranceDekho plans &nbsp;|&nbsp; Free Consultation</p>
+        </div>
+    </section>
+
+    <div class="container-full">
+
+        <!-- INTRO NOTE -->
+        <div class="lic-intro" style="margin-top:30px;">
+            <i class="fas fa-info-circle icon-accent"></i>
+            All insurance plans are available at our CSC center in Jakhnidhar. We help you compare, choose, and apply.
+            <a href="tel:+919034143872" class="btn-free-consult">
+                <i class="fas fa-phone-alt"></i> Free Consultation
+            </a>
+        </div>
+
+        <!-- ══════════════════════════════════════════
+             SEGMENT 1 — TATA AIG (PREMIUM)
+        ══════════════════════════════════════════ -->
+
+        <div class="segment-banner premium">
+            <i class="fas fa-gem"></i>
+            <div>
+                <strong>TATA AIG — Premium Segment</strong>
+                <span class="seg-label">Tata Group + AIG (USA) Joint Venture &nbsp;|&nbsp; 5 Cr+ Customers &nbsp;|&nbsp; 12,000+ Network Hospitals</span>
+            </div>
+        </div>
+
+        <!-- Health Insurance -->
+        <h2 class="section-title-sports">Health Insurance – Tata AIG</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Bestseller</span>
+                <div class="ins-icon"><i class="fas fa-heart-pulse"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Medicare Plan</h3>
+                <p>All-round medical coverage for individuals & families. Covers hospitalisation, day-care, pre & post hospitalisation expenses.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Individual & Family</span>
+                    <span class="ins-tag t-green">Cashless at 12,000+ Hospitals</span>
+                    <span class="ins-tag t-orange">Sum: ₹2L – ₹20L</span>
+                </div>
+                <div class="premium-band"><strong>Key Features:</strong> Lifelong renewability · No claim bonus · Day-care cover · Ambulance cover</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Top Pick</span>
+                <div class="ins-icon"><i class="fas fa-star"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Medicare Premier</h3>
+                <p>Comprehensive plan with enhanced benefits — maternity cover, OPD, wellness programs, international emergency cover.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Individual & Family</span>
+                    <span class="ins-tag t-red">With Maternity</span>
+                    <span class="ins-tag t-orange">Sum: ₹5L – ₹50L</span>
+                </div>
+                <div class="premium-band"><strong>Key Features:</strong> Maternity cover · OPD included · Wellness rewards · International emergency</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Budget Friendly</span>
+                <div class="ins-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Medicare Protect</h3>
+                <p>Basic but solid health plan covering planned and emergency hospitalisation. Best for those wanting essential coverage.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Individual</span>
+                    <span class="ins-tag t-green">Low Premium</span>
+                    <span class="ins-tag t-orange">Sum: ₹2L – ₹10L</span>
+                </div>
+                <div class="premium-band"><strong>Key Features:</strong> In-patient cover · Emergency hospitalisation · Ambulance charges</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Critical Illness</span>
+                <div class="ins-icon"><i class="fas fa-heart"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Criti Medicare</h3>
+                <p>Covers up to 100 critical illnesses including cancer, stroke, kidney failure. Lump sum payout on diagnosis.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-red">100 Critical Illnesses</span>
+                    <span class="ins-tag t-blue">Lump Sum Payout</span>
+                    <span class="ins-tag t-orange">Sum: ₹5L – ₹2Cr</span>
+                </div>
+                <div class="premium-band"><strong>Key Features:</strong> Cancer 360° cover · Hospital cash · Accident cover option</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">For Women</span>
+                <div class="ins-icon"><i class="fas fa-venus"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Maternal Care – Sakhi</h3>
+                <p>Maternity insurance plan covering delivery expenses, pregnancy complications, congenital anomalies. 90-day waiting period only.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-red">Maternity Cover</span>
+                    <span class="ins-tag t-blue">For Women</span>
+                    <span class="ins-tag t-green">90-Day Wait Only</span>
+                </div>
+                <div class="premium-band"><strong>Key Features:</strong> Normal & C-section delivery · Ectopic pregnancy · Newborn cover</div>
+            </div>
+
+        </div>
+
+        <!-- Motor Insurance -->
+        <h2 class="section-title-sports">Motor Insurance – Tata AIG</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Mandatory</span>
+                <div class="ins-icon"><i class="fas fa-car"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Car Insurance – Comprehensive</h3>
+                <p>Full coverage for your car — own damage + third party liability. Protects against accidents, theft, fire, floods, natural disasters.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Own Damage + 3rd Party</span>
+                    <span class="ins-tag t-green">Zero Depreciation Add-on</span>
+                    <span class="ins-tag t-orange">From ₹2,094/yr</span>
+                </div>
+                <div class="premium-band"><strong>Add-ons available:</strong> Zero dep · Engine protect · Roadside assist · Invoice cover</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Third Party</span>
+                <div class="ins-icon"><i class="fas fa-car"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Car Insurance – Third Party</h3>
+                <p>Legally mandatory insurance covering damage caused to another person or property by your car. Govt. fixed premium.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-red">Legally Mandatory</span>
+                    <span class="ins-tag t-green">Govt. Fixed Rate</span>
+                    <span class="ins-tag t-orange">Lowest Premium</span>
+                </div>
+                <div class="premium-band"><strong>Covers:</strong> 3rd party injury · 3rd party property damage · Unlimited liability for death</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Two Wheeler</span>
+                <div class="ins-icon"><i class="fas fa-bicycle"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Bike Insurance – Comprehensive</h3>
+                <p>Complete bike protection against accidents, theft, fire, natural calamities. Cashless repair at 12,000+ workshops.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Bike & Scooter</span>
+                    <span class="ins-tag t-green">12,000+ Workshops</span>
+                    <span class="ins-tag t-orange">Very Low Premium</span>
+                </div>
+                <div class="premium-band"><strong>Add-ons:</strong> Zero depreciation · Engine cover · PA cover for pillion rider</div>
+            </div>
+
+        </div>
+
+        <!-- Travel & Other -->
+        <h2 class="section-title-sports">Travel, Home & Accident – Tata AIG</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Travellers</span>
+                <div class="ins-icon"><i class="fas fa-plane"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Travel Guard – International</h3>
+                <p>Complete international travel insurance covering medical emergencies abroad, trip cancellation, lost baggage, passport loss.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">International Travel</span>
+                    <span class="ins-tag t-green">Medical Emergency Abroad</span>
+                    <span class="ins-tag t-orange">Trip Cancellation</span>
+                </div>
+                <div class="premium-band"><strong>Also covers:</strong> Lost baggage · Flight delay · Emergency evacuation · Hijack</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Domestic</span>
+                <div class="ins-icon"><i class="fas fa-map-location-dot"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Travel Guard – Domestic</h3>
+                <p>Covers medical emergencies and accidents during domestic trips within India including Chardham Yatra and pilgrimage tours.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Within India</span>
+                    <span class="ins-tag t-green">Chardham / Pilgrimage</span>
+                    <span class="ins-tag t-orange">Affordable</span>
+                </div>
+                <div class="premium-band"><strong>Covers:</strong> Accident · Hospitalisation · Trip cancellation · Loss of baggage</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Personal</span>
+                <div class="ins-icon"><i class="fas fa-person-falling-burst"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Personal Accident Insurance</h3>
+                <p>Financial protection in case of accidental death, permanent disability, or temporary disability. Also covers job loss due to accident.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-red">Accidental Death</span>
+                    <span class="ins-tag t-blue">Disability Cover</span>
+                    <span class="ins-tag t-orange">Job Loss Cover</span>
+                </div>
+                <div class="premium-band"><strong>Covers:</strong> Death · Permanent disability · Temporary disability · Job loss benefit</div>
+            </div>
+
+            <div class="ins-card">
+                <span class="ins-badge badge-premium">Home</span>
+                <div class="ins-icon"><i class="fas fa-house-chimney-crack"></i></div>
+                <div class="provider">Tata AIG General Insurance</div>
+                <h3>Home Insurance</h3>
+                <p>Protects your home structure and contents against fire, flood, earthquake, theft, and other natural/man-made disasters.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Structure + Contents</span>
+                    <span class="ins-tag t-green">Natural Disasters</span>
+                    <span class="ins-tag t-red">Theft Cover</span>
+                </div>
+                <div class="premium-band"><strong>Covers:</strong> Fire · Flood · Earthquake · Theft · Tenant liability</div>
+            </div>
+
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+             SEGMENT 2 — INSURANCEDEKHO (BUDGET)
+        ══════════════════════════════════════════ -->
+
+        <div class="segment-banner budget">
+            <i class="fas fa-piggy-bank"></i>
+            <div>
+                <strong>InsuranceDekho – Budget Segment</strong>
+                <span class="seg-label">Best value plans from top insurers &nbsp;|&nbsp; Starting ₹10/day &nbsp;|&nbsp; Compare & Save up to 40%</span>
+            </div>
+        </div>
+
+        <!-- Budget Health -->
+        <h2 class="section-title-sports">Health Insurance – Budget Plans</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Top Rated</span>
+                <div class="ins-icon"><i class="fas fa-heart-pulse"></i></div>
+                <div class="provider">Niva Bupa (via InsuranceDekho)</div>
+                <h3>Niva Bupa ReAssure 2.0</h3>
+                <p>Best claim settlement ratio in India. Unlimited automatic recharge of sum insured. No room rent cap. Restore benefit unlimited times.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Individual & Family</span>
+                    <span class="ins-tag t-green">Unlimited Restore</span>
+                    <span class="ins-tag t-orange">Sum: ₹3L – ₹1Cr</span>
+                </div>
+                <div class="premium-band"><strong>From ₹490/month</strong> · 98%+ CSR · 10,000+ hospitals · No room rent cap</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Family Favourite</span>
+                <div class="ins-icon"><i class="fas fa-users"></i></div>
+                <div class="provider">Star Health (via InsuranceDekho)</div>
+                <h3>Star Family Health Optima</h3>
+                <p>India's most popular family floater plan. Covers self, spouse, dependent children. 3x automatic restoration. Air ambulance included.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Family Floater</span>
+                    <span class="ins-tag t-green">3x Auto Restore</span>
+                    <span class="ins-tag t-orange">Sum: ₹3L – ₹25L</span>
+                </div>
+                <div class="premium-band"><strong>From ₹350/month</strong> · Air ambulance · Day-care · Pre & post hospitalisation</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Best Value</span>
+                <div class="ins-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="provider">HDFC Ergo (via InsuranceDekho)</div>
+                <h3>HDFC Ergo Optima Secure</h3>
+                <p>100% claim settlement ratio. No-claim bonus up to 150%. Covers pre-existing diseases from Day 1 for accidents. 10,000+ hospitals.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-red">100% Claim Settlement</span>
+                    <span class="ins-tag t-green">NCB up to 150%</span>
+                    <span class="ins-tag t-orange">Sum: ₹5L – ₹2Cr</span>
+                </div>
+                <div class="premium-band"><strong>From ₹420/month</strong> · Co-pay waiver · Day-care · Wellness programs</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Senior Citizens</span>
+                <div class="ins-icon"><i class="fas fa-hands-holding"></i></div>
+                <div class="provider">Care Health (via InsuranceDekho)</div>
+                <h3>Care Senior Health Advantage</h3>
+                <p>Best plan for people aged 60+. No pre-medical test up to 75 years. Annual health check-up free. Global cover for critical illness.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Age 60+</span>
+                    <span class="ins-tag t-green">Global Critical Cover</span>
+                    <span class="ins-tag t-orange">No Pre-test up to 75</span>
+                </div>
+                <div class="premium-band"><strong>From ₹800/month</strong> · Free annual check-up · Lifelong renewability · OPD cover</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-govt">Govt. Scheme</span>
+                <div class="ins-icon"><i class="fas fa-flag"></i></div>
+                <div class="provider">Govt. of India (via InsuranceDekho)</div>
+                <h3>PMJJBY – ₹436/Year</h3>
+                <p>Pradhan Mantri Jeevan Jyoti Bima Yojana. ₹2 Lakh life cover for just ₹436/year. Auto-debit from bank. Renewable annually.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Age: 18–50 yrs</span>
+                    <span class="ins-tag t-red">Cover: ₹2 Lakh</span>
+                    <span class="ins-tag t-green">₹436/year only</span>
+                </div>
+                <div class="premium-band"><strong>₹436/year</strong> · Death cover · Auto-debit from savings account · Bank-linked</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-govt">Govt. Scheme</span>
+                <div class="ins-icon"><i class="fas fa-person-falling-burst"></i></div>
+                <div class="provider">Govt. of India (via InsuranceDekho)</div>
+                <h3>PMSBY – ₹20/Year</h3>
+                <p>Pradhan Mantri Suraksha Bima Yojana. Accidental insurance – ₹2 Lakh cover for death/full disability. Only ₹20/year!</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Age: 18–70 yrs</span>
+                    <span class="ins-tag t-red">Cover: ₹2 Lakh</span>
+                    <span class="ins-tag t-green">₹20/year only!</span>
+                </div>
+                <div class="premium-band"><strong>₹20/year</strong> · Accidental death · Full/partial disability · Bank-linked auto-debit</div>
+            </div>
+
+        </div>
+
+        <!-- Budget Motor -->
+        <h2 class="section-title-sports">Motor Insurance – Budget Plans</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Best Value</span>
+                <div class="ins-icon"><i class="fas fa-car"></i></div>
+                <div class="provider">Digit / ICICI Lombard (via InsuranceDekho)</div>
+                <h3>Budget Car Insurance</h3>
+                <p>Compare 20+ car insurance providers instantly. Get comprehensive coverage at the lowest price. Instant policy, cashless claim at 12,000+ garages.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Comprehensive</span>
+                    <span class="ins-tag t-green">Instant Policy</span>
+                    <span class="ins-tag t-orange">Compare 20+ Insurers</span>
+                </div>
+                <div class="premium-band"><strong>From ₹2,000/year</strong> · Zero dep add-on · Engine protect · Roadside assist</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Lowest Rate</span>
+                <div class="ins-icon"><i class="fas fa-bicycle"></i></div>
+                <div class="provider">Bajaj / HDFC Ergo (via InsuranceDekho)</div>
+                <h3>Budget Bike Insurance</h3>
+                <p>Most affordable bike insurance plans from top companies. Covers your bike against accidents, theft and natural disasters. Instant policy.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Bike & Scooter</span>
+                    <span class="ins-tag t-green">Instant Digital Policy</span>
+                    <span class="ins-tag t-orange">Compare & Save</span>
+                </div>
+                <div class="premium-band"><strong>From ₹500/year</strong> · 3rd party mandatory · Own damage · Roadside assist</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Commercial</span>
+                <div class="ins-icon"><i class="fas fa-truck"></i></div>
+                <div class="provider">National / Oriental (via InsuranceDekho)</div>
+                <h3>Commercial Vehicle Insurance</h3>
+                <p>Insurance for taxis, trucks, tractors, autos and commercial vehicles. Covers goods in transit, passengers and third-party liabilities.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Taxi / Truck / Tractor</span>
+                    <span class="ins-tag t-green">Goods in Transit</span>
+                    <span class="ins-tag t-orange">Passenger Cover</span>
+                </div>
+                <div class="premium-band"><strong>Customised premium</strong> · 3rd party mandatory · Own damage option · All India permit</div>
+            </div>
+
+        </div>
+
+        <!-- Budget Term & Life -->
+        <h2 class="section-title-sports">Term & Life Insurance – Budget Plans</h2>
+        <div class="ins-grid">
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Best Term</span>
+                <div class="ins-icon"><i class="fas fa-user-shield"></i></div>
+                <div class="provider">ICICI Prudential (via InsuranceDekho)</div>
+                <h3>ICICI iProtect Smart</h3>
+                <p>Best value term insurance plan. ₹1 Crore cover at just ₹500/month for 30-year-old. Multiple payout options. Critical illness rider available.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Pure Term Plan</span>
+                    <span class="ins-tag t-red">₹1 Cr Cover</span>
+                    <span class="ins-tag t-green">From ₹500/month</span>
+                </div>
+                <div class="premium-band"><strong>From ₹500/month</strong> (30yr, ₹1Cr cover) · Critical illness rider · Accidental death benefit</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">SBI Trusted</span>
+                <div class="ins-icon"><i class="fas fa-shield-halved"></i></div>
+                <div class="provider">SBI Life (via InsuranceDekho)</div>
+                <h3>SBI Life eShield Next</h3>
+                <p>Trusted government-backed term plan. Level cover or increasing cover option. Joint life cover available for couple. No medical needed up to 45L.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Individual & Joint</span>
+                    <span class="ins-tag t-green">Increasing Cover Option</span>
+                    <span class="ins-tag t-orange">No Medical up to ₹45L</span>
+                </div>
+                <div class="premium-band"><strong>From ₹450/month</strong> · Level or increasing sum · Return of premium option</div>
+            </div>
+
+            <div class="ins-card budget-card">
+                <span class="ins-badge badge-budget">Max Cover</span>
+                <div class="ins-icon"><i class="fas fa-infinity"></i></div>
+                <div class="provider">Max Life (via InsuranceDekho)</div>
+                <h3>Max Life Smart Secure Plus</h3>
+                <p>High sum assured at low cost. Special discount for women and non-tobacco users. In-built terminal illness cover. Waiver of premium.</p>
+                <div class="ins-tags">
+                    <span class="ins-tag t-blue">Up to ₹10 Crore cover</span>
+                    <span class="ins-tag t-green">Women's Discount</span>
+                    <span class="ins-tag t-orange">Terminal Illness Cover</span>
+                </div>
+                <div class="premium-band"><strong>From ₹480/month</strong> · Terminal illness · Waiver of premium · Accident benefit rider</div>
+            </div>
+
+        </div>
+
+        <!-- Comparison Table -->
+        <h2 class="section-title-sports">Premium vs Budget – Quick Comparison</h2>
+        <div class="compare-box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Tata AIG (Premium)</th>
+                        <th class="green-th">InsuranceDekho (Budget)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Best For</td><td>Comprehensive coverage, brand trust</td><td>Affordable plans, best price</td></tr>
+                    <tr><td>Health Cover</td><td>₹2L – ₹2Cr (own plans)</td><td>₹3L – ₹1Cr (multiple companies)</td></tr>
+                    <tr><td>Hospital Network</td><td>12,000+ hospitals</td><td>10,000 – 15,000+ (varies by insurer)</td></tr>
+                    <tr><td>Claim Settlement</td><td>High (own claims team)</td><td>Depends on insurer (98%+ for Niva Bupa)</td></tr>
+                    <tr><td>Car Insurance</td><td>Tata AIG comprehensive plans</td><td>Compare 20+ companies, lowest price</td></tr>
+                    <tr><td>Bike Insurance</td><td>Tata AIG (trusted brand)</td><td>From ₹500/yr, compare all companies</td></tr>
+                    <tr><td>Life / Term</td><td>Not offered (general insurer)</td><td>ICICI, SBI, Max Life – from ₹450/mo</td></tr>
+                    <tr><td>Govt. Schemes</td><td>Not applicable</td><td>PMJJBY ₹436/yr · PMSBY ₹20/yr</td></tr>
+                    <tr><td>Special Plans</td><td>Maternity (Sakhi), Critical Illness</td><td>Senior citizen, women, diabetes plans</td></tr>
+                    <tr><td>Premium Range</td><td>Medium to High</td><td>Very Low to Medium</td></tr>
+                    <tr><td>Our Recommendation</td><td>For salaried class, business owners</td><td>For budget-conscious families</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Documents Required -->
+        <h2 class="section-title-sports">Documents Required to Apply</h2>
+        <div class="ins-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px,1fr));">
+            <div class="docs-box">
+                <h4><i class="fas fa-id-card"></i>Identity Proof (Any 1)</h4>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Aadhaar Card (Mandatory)</li>
+                    <li><i class="fas fa-check-circle"></i> PAN Card</li>
+                    <li><i class="fas fa-check-circle"></i> Voter ID / Passport</li>
+                </ul>
+            </div>
+            <div class="docs-box">
+                <h4><i class="fas fa-file-alt"></i>For Health Insurance</h4>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Age Proof (Aadhaar/Birth cert)</li>
+                    <li><i class="fas fa-check-circle"></i> Passport size photo</li>
+                    <li><i class="fas fa-check-circle"></i> Medical reports (if pre-existing disease)</li>
+                </ul>
+            </div>
+            <div class="docs-box">
+                <h4><i class="fas fa-car"></i>For Motor Insurance</h4>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> RC Book (Registration Certificate)</li>
+                    <li><i class="fas fa-check-circle"></i> Old insurance policy (for renewal)</li>
+                    <li><i class="fas fa-check-circle"></i> Driving Licence</li>
+                </ul>
+            </div>
+            <div class="docs-box">
+                <h4><i class="fas fa-piggy-bank"></i>For PMJJBY / PMSBY</h4>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Aadhaar Card</li>
+                    <li><i class="fas fa-check-circle"></i> Bank Passbook (linked to Aadhaar)</li>
+                    <li><i class="fas fa-check-circle"></i> Mobile number linked to bank</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="ins-cta">
+            <h2><i class="fas fa-phone-alt"></i> Get Free Insurance Advice</h2>
+            <p>Not sure which plan to choose? Visit us at Jakhnidhar or call for a free comparison and consultation.</p>
+            <div class="cta-btns">
+                <a href="tel:+919034143872" class="btn-call"><i class="fas fa-phone"></i> Call Now</a>
+                <a href="https://wa.me/919034143872" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+            </div>
+        </div>
+
+    </div><!-- /container-full -->
+
+    <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact for Any Queries</h3>
+            <div class="footer-icons">
+                <a href="mailto:prabhatramola12@gmail.com" class="footer-icon-link" title="Email Us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/919034143872" class="footer-icon-link whatsapp-bg" title="WhatsApp Us">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="business-email">prabhatramola12@gmail.com</p>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Jakhnidhar Digital Hub. All Rights Reserved.</p>
+            <div class="developer-credit">
+                Designed and Developed by <br>
+                <span class="dev-name">Divyanshu Rudola</span>
+                <div class="dev-contact">
+                    <a href="tel:+917983447349"><i class="fas fa-phone-volume"></i> 7983447349</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
